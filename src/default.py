@@ -12,14 +12,13 @@ stream_sources = {
     'EBC 3': 'http://www.vixtream.net/vcdn/ebctv.php?chan=ebc3'
 }
 
-
 def get_stream_urls():
     """Retrieves actual streamable URLs from the sources provided"""
     streams = {}
+    regex = re.compile('file:\s*"(.+)"')
     for stream_source in stream_sources:
         source = urllib2.urlopen(stream_sources[stream_source]).read()
         try:
-            regex = re.compile('file:\s*"(.+)"')
             streams[stream_source] = regex.search(source).group(1)
         except:
             streams[stream_source + '(Unavailable)'] = None
@@ -28,15 +27,10 @@ def get_stream_urls():
 
 def main():
     proc_handle = int(sys.argv[1]);
-    stream_urls = get_stream_urls()
-
     for stream_url in stream_urls:
-
-        # Show the listing
-        listItem = xbmcgui.ListItem(stream_url)
+        listItem = xbmcgui.ListItem(get_stream_urls())
         listItem.setIconImage('icon.png')
         xbmcplugin.addDirectoryItem(handle=proc_handle, url=stream_urls[stream_url], listitem=listItem)
-
     xbmcplugin.endOfDirectory(proc_handle)
 
 main()
