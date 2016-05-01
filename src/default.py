@@ -5,14 +5,17 @@ import sys
 import re
 import urllib2
 
-stream_sources = {
-    'EBS TV': 'http://www.vixtream.net/vcdn/playerf.php?chan=ebstv',
-    'EBC 1': 'http://www.vixtream.net/vcdn/ebctv.php',
-    'EBC 2': 'http://www.vixtream.net/vcdn/ebctv.php?chan=ebc2',
-    'EBC 3': 'http://www.vixtream.net/vcdn/ebctv.php?chan=ebc3'
-}
+
 
 def get_stream_urls():
+    
+    stream_sources = {
+        'EBS TV': 'http://www.vixtream.net/vcdn/playerf.php?chan=ebstv',
+        'EBC 1': 'http://www.vixtream.net/vcdn/ebctv.php',
+        'EBC 2': 'http://www.vixtream.net/vcdn/ebctv.php?chan=ebc2',
+        'EBC 3': 'http://www.vixtream.net/vcdn/ebctv.php?chan=ebc3'
+    }
+
     """Retrieves actual streamable URLs from the sources provided"""
     streams = {}
     regex = re.compile('file:\s*"(.+)"')
