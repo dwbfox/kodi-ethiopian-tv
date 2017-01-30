@@ -1,4 +1,5 @@
-﻿import xbmcaddon
+
+import xbmcaddon
 import xbmcgui
 import xbmcplugin
 import sys
@@ -6,6 +7,7 @@ import re
 import urllib2
 
 
+regex = re.compile('file:\s*"(.+)"')
 
 def get_stream_urls():
     
@@ -18,17 +20,17 @@ def get_stream_urls():
 
     """Retrieves actual streamable URLs from the sources provided"""
     streams = {}
-    regex = re.compile('file:\s*"(.+)"')
     for stream_source in stream_sources:
         source = urllib2.urlopen(stream_sources[stream_source]).read()
         try:
             streams[stream_source] = regex.search(source).group(1)
         except:
-            streams[stream_source + '(Unavailable)'] = None
+            streams[stream_source + '(Unavailable)'] = ''
     return streams
 
 
 def main():
+    stream_urls = get_stream_urls()
     proc_handle = int(sys.argv[1]);
     for stream_url in stream_urls:
         listItem = xbmcgui.ListItem(get_stream_urls())
