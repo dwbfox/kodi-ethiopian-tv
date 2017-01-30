@@ -30,6 +30,7 @@ def get_stream_urls():
 
 
 def main():
+    stream_urls = get_stream_urls()
     proc_handle = int(sys.argv[1]);
     for stream_url in stream_urls:
         listItem = xbmcgui.ListItem(get_stream_urls())
