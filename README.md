@@ -1,13 +1,14 @@
 # kodi-ethiopian-tv
 
-** 2.0 Release ** 
+###2.0 Release
+
 Now updated to work on Kodi v17+ (Krpyton)
 Watch live streams from various Ethiopian broadcast television sources, currently supporting EBS TV, EBC 1, EBC 2, and EBC 3. 
 
 ![](https://i.imgur.com/EXOd7je.png)
 
 
-# Installation
+##Installation
 [Follow standard instructions](http://kodi.wiki/view/HOW-TO:Install_add-ons_from_zip_files) on installing add-ons via zip files for Kodi. The latest zipped archive for `kodi-ethiopian-tv` can be found in the `dist/` directory. This directory contains both the older plugin for older XBMC/Kodi versions (Jarvis and Older) and the newer Krypton compatible plugin. 
 
 
