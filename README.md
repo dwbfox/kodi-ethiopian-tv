@@ -2,7 +2,8 @@
 
 ###2.0 Release
 
-Now updated to work on Kodi v17+ (Krpyton)
+Now with Kodi v17+ (Krypton) support!
+
 Watch live streams from various Ethiopian broadcast television sources, currently supporting EBS TV, EBC 1, EBC 2, and EBC 3. 
 
 ![](https://i.imgur.com/EXOd7je.png)
