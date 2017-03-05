@@ -18,6 +18,9 @@ Watch live streams from various Ethiopian broadcast television sources, currentl
 * Click on `Ethiopian Televsion`
 * Select the desired channel `(EBS TV|EBC 1|EBC 2|EBC 3)`
 
+# Known Issues
+* EBS Streaming does not work
+* Icons, images, descriptions need updates
 
 # License
 The MIT License (MIT)
